@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux'
+import {actionCreator} from './Action/MyAction' 
 
 function App(props) {
   console.log(props)
@@ -26,9 +27,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps=(dispatch)=>{
   return{
     changeName:(name)=>{
-      dispatch({
-        type:"CHANGE_NAME",payload:name
-      })
+      dispatch(actionCreator(name))
     }
   }
 }
